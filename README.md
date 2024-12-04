@@ -1,16 +1,11 @@
-# Yet Another Generic Swerve Library (YAGSL) Example project
 
-YAGSL is intended to be an easy implementation of a generic swerve drive that should work for most
-square swerve drives. The project is documented
-on [here](https://github.com/BroncBotz3481/YAGSL/wiki). The JSON documentation can also be
-found [here](docs/START.md)
+# OFF Season CRESCENDO <strong>Trevitck</strong> - Cuiabá 2024
 
-This example is intended to be a starting place on how to use YAGSL. By no means is this intended to
-be the base of your robot project. YAGSL provides an easy way to generate a SwerveDrive which can be
-used in both TimedRobot and Command-Based Robot templates.
+Esse é o nosso código do Robô do ano de 2024 do OFF SEASON de Cuiabá, Mato Grosso.
+É majoritariamente baseado em um YAGSL, o que facilitou muito o desenvolvimento ao longo da temporada
 
 
-# Overview
+## Overview
 
 ### Installation
 
@@ -26,9 +21,6 @@ https://broncbotz3481.github.io/YAGSL-Lib/yagsl/yagsl.json
 [WIKI](https://github.com/BroncBotz3481/YAGSL/wiki)  
 [Config Generation](https://broncbotz3481.github.io/YAGSL-Example/)
 
-# Create an issue if there is any errors you find!
-
-We will be actively montoring this and fix any issues when we can!
 
 ## Development
 
@@ -67,21 +59,6 @@ import edu.wpi.first.math.util.Units;
 SwerveDrive swerveDrive=new SwerveParser(new File(Filesystem.getDeployDirectory(),"swerve")).createSwerveDrive(Units.feetToMeters(14.5));
 ```
 
-# Migrating Old Configuration Files
-
-1. Delete `wheelDiamter`, `gearRatio`, `encoderPulsePerRotation` from `physicalproperties.json`
-2. Add `optimalVoltage` to `physicalproperties.json`
-3. Delete `maxSpeed` and `optimalVoltage` from `swervedrive.json`
-4. **IF** a swerve module doesn't have the same drive motor or steering motor as the rest of the
-   swerve drive you **MUST** specify a `conversionFactor` for BOTH the drive and steering motor in
-   the modules configuration JSON file. IF one of the motors is the same as the rest of the swerve
-   drive and you want to use that `conversionFactor`, set the `conversionFactor` in the module JSON
-   configuration to 0.
-5. You MUST specify the maximum speed when creating a `SwerveDrive`
-   through `new SwerveParser(directory).createSwerveDrive(maximumSpeed);`
-6. IF you do not want to set `conversionFactor` in `swervedrive.json`. You can pass it into the
-   constructor as a parameter like this
-
 ```java
 double DriveConversionFactor = SwerveMath.calculateMetersPerRotation(Units.inchesToMeters(WHEEL_DIAMETER), GEAR_RATIO, ENCODER_RESOLUTION);
 double SteeringConversionFactor = SwerveMath.calculateDegreesPerSteeringRotation(GEAR_RATIO, ENCODER_RESOLUTION);
@@ -97,19 +74,4 @@ SwerveDrive swerveDrive = new SwerveParser(directory).createSwerveDrive(maximumS
 * Invert the gyro scope.
 * Invert the drive motors for every module. (If front and back become reversed when turning)
 
-### Angle motors are erratic.
-
-* Invert the angle motor.
-
-### My robot is heavy.
-
-* Implement momentum velocity limitations in SwerveMath.
-
-### Ensure the IMU is centered on the robot
-
-# Maintainers
-- @thenetworkgrinch
-- @Technologyman00 
-
-# Special Thanks to Team 7900! Trial N' Terror
-Without the debugging and aid of Team 7900 the project could never be as stable or active as it is. 
+ 
